@@ -5,10 +5,10 @@ return array(
 
     'pdf' => array(
         'enabled' => true,
-        'binary'  => 'vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64',
+        'binary'  => '/home/ubuntu/workspace/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64',
         'timeout' => false,
         'options' => array(),
-        'env'     => array(),
+        'env'     => array('production'),
     ),
     'image' => array(
         'enabled' => true,

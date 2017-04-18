@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use PDF;
 
 class TestController extends Controller {
    public function __construct(){
@@ -23,6 +24,14 @@ class TestController extends Controller {
    }
    public function index(){
       echo "<br>Test Controller.";
+      $data = array();
+      $pdf = PDF::loadView('welcome', $data);
+      return $pdf->download('invoice.pdf');
+      
+//       $pdf = App::make('snappy.pdf.wrapper');
+// $pdf->loadHTML('<h1>Test</h1>');
+// return $pdf->inline();
+
    }
    public function create(){
       echo 'create';
