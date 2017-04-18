@@ -26,11 +26,14 @@ class TestController extends Controller {
       echo "<br>Test Controller.";
       $data = array();
       $pdf = PDF::loadView('welcome', $data);
-      return $pdf->download('invoice.pdf');
+      $pdf->save('/home/ubuntu/workspace/invoice.pdf');
+      //return $pdf->download('invoice.pdf');
       
 //       $pdf = App::make('snappy.pdf.wrapper');
 // $pdf->loadHTML('<h1>Test</h1>');
 // return $pdf->inline();
+
+     // PDF::loadHTML($pdf)->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->save('myfile.pdf');
 
    }
    public function create(){
